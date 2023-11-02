@@ -4,8 +4,8 @@ if __name__ == "__main__":
     argv = sys.argv[1:]
     argc = len(argv)
     if argc == 0:
-        print("{} arguments.".format(argc))
+        print("{:d} argument.".format(argc))
     else:
-        print("{} arguments:".format(argc))
+        print("{:d} arguments:".format(argc))
         for i in range(argc):
-            print("{}: {}".format(i + 1, argv[i]))
+            print("{:d}: {:s}".format(i + 1, argv[i]))
