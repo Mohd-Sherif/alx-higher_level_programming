@@ -23,13 +23,13 @@ if __name__ == "__main__":
 
         # check for the operator
         if op == "+":
-            result = a + b
+            result = add(a, b)
         elif op == "-":
-            result = a - b
+            result = sub(a, b)
         elif op == "*":
-            result = a * b
+            result = mul(a, b)
         elif op == "/":
-            result = a / b
+            result = div(a, b)
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
