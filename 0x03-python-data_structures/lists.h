@@ -1,6 +1,8 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+#include <stddef.h>
+
 #define PALINDROME	1
 #define NOT_PALINDROME	0
 
