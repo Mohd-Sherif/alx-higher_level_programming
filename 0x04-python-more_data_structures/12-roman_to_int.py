@@ -12,7 +12,10 @@ def roman_to_int(roman_string):
             'D': 500,
             'M': 1000
             }
-#    return reduce((lambda x, y: x + y if x >= y else y - x), [roman_numeral[c] for c in roman_string])
+#    return reduce(
+#                    (lambda x, y: x + y if x >= y else y - x),
+#                   [roman_numeral[c] for c in roman_string]
+#               )
     result = 0
     prev_value = 0
     for c in roman_string:
