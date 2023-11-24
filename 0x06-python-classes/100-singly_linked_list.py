@@ -4,6 +4,7 @@
 
 class Node:
     """Implement `Node` Class"""
+
     def __init__(self, data, next_node=None):
         """
         Initialize a Node with the given data and next_node
@@ -68,6 +69,7 @@ class Node:
 
 class SinglyLinkedList:
     """A class that represents a singly linked list."""
+
     def __init__(self):
         """Initialize an empty singly linked list."""
         self.__head = None
@@ -108,4 +110,4 @@ class SinglyLinkedList:
         while current is not None:
             res += str(current.data) + '\n'
             current = current.next_node
-        return res
+        return res.rstrip('\n')
