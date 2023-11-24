@@ -83,6 +83,7 @@ class SinglyLinkedList:
             value (int): The value to be inserted.
         """
         new_node = Node(value)
+
         if self.__head is None:
             self.__head = new_node
         elif value <= self.__head.data:
