@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """Implement an empty `Rectangle` Class"""
+    """Implement `Rectangle` Class"""
 
     def __init__(self, width=0, height=0):
         """
@@ -49,6 +49,7 @@ class Rectangle:
         """
         return self.__height
 
+    @height.setter
     def height(self, value):
         """
         set the height
