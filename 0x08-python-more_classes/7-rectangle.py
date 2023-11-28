@@ -79,7 +79,7 @@ class Rectangle:
                 else 2 * (self.__width + self.__height))
 
     def __str__(self):
-        """Informal and nicely printable string representation of rectangle"""
+        """Informal and nicely printable string representation"""
         if self.__height == 0 or self.width == 0:
             return ""
         return ('\n'.join([str(self.print_symbol) * self.__width] * self.__height))
