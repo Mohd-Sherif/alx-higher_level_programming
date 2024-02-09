@@ -16,8 +16,3 @@ class MyInt(int):
 
     def __str__(self):
         return "{}".format(self.__n)
-
-my_i = MyInt(3)
-print(my_i)
-print(my_i == 3)
-print(my_i != 3)
