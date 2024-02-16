@@ -8,19 +8,23 @@ import MySQLdb
 import sys
 
 
-host = 'localhost'
-port = 3306
-dbUsr = sys.argv[1]
-dbPass = sys.argv[2]
-dbName = sys.argv[3]
+if __name__ == '__main__':
+    host = 'localhost'
+    port = 3306
+    dbUsr = sys.argv[1]
+    dbPass = sys.argv[2]
+    dbName = sys.argv[3]
 
-db = MySQLdb.connect(host=host, port=port,
-        user=dbUsr, passwd=dbPass, db=dbName)
-cur = db.cursor()
-cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;")
-res = cur.fetchall()
-for row in res:
-    print(row)
+    db = MySQLdb.connect(host=host, port=port,
+            user=dbUsr, passwd=dbPass, db=dbName)
+    cur = db.cursor()
+    
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;")
+    
+    res = cur.fetchall()
+    
+    for row in res:
+        print(row)
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()
