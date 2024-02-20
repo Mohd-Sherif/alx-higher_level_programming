@@ -16,19 +16,24 @@ if __name__ == '__main__':
     dbName = sys.argv[3]
     stateName = sys.argv[4]
 
-    db = MySQLdb.connect(host=host, port=port,
-            user=dbUsr, passwd=dbPass, db=dbName)
+    db = MySQLdb.connect(
+            host=host,
+            port=port,
+            user=dbUsr,
+            passwd=dbPass,
+            db=dbName
+        )
     cur = db.cursor()
 
     query = \
-            """
-            SELECT c.id, c.name, s.name
-            FROM cities as c
-            INNER JOIN states as s ON s.id = c.state_id
-            WHERE s.name
-            LIKE '{}'
-            ORDER BY c.id;
-            """.format(stateName)
+        """
+        SELECT c.id, c.name, s.name
+        FROM cities as c
+        INNER JOIN states as s ON s.id = c.state_id
+        WHERE s.name
+        LIKE '{}'
+        ORDER BY c.id;
+        """.format(stateName)
     cur.execute(query)
 
     res = cur.fetchall()

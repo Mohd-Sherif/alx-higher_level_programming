@@ -29,8 +29,8 @@ if __name__ == '__main__':
 
     # Query all State objects and sort them by id in ascending order
     state = session.query(State)\
-            .filter(State.name.like(stateToSearch))\
-            .order_by(State.id).first()
+        .filter(State.name.like(stateToSearch))\
+        .order_by(State.id).first()
 
     # Display results
     print(state.id if state is not None else 'Not found')

@@ -29,8 +29,8 @@ if __name__ == '__main__':
 
     # Query all State objects and sort them by id in ascending order
     states = session.query(State)\
-            .filter(State.name.like('%a%'))\
-            .order_by(State.id).all()
+        .filter(State.name.like('%a%'))\
+        .order_by(State.id).all()
 
     # Display results
     for state in states:

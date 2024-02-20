@@ -34,7 +34,8 @@ if __name__ == '__main__':
     # Flush to ensure that the new state is added to the database
     session.flush()
 
-    # Create the City "San Francisco" and associate it with the State "California"
+    # Create the City "San Francisco"
+    # and associate it with the State "California"
     san_francisco = City(name="San Francisco", state_id=california.id)
     session.add(san_francisco)
 

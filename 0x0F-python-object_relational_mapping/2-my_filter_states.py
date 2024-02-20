@@ -16,18 +16,23 @@ if __name__ == '__main__':
     dbName = sys.argv[3]
     stateNameSearched = sys.argv[4]
 
-    db = MySQLdb.connect(host=host, port=port,
-            user=dbUsr, passwd=dbPass, db=dbName)
+    db = MySQLdb.connect(
+            host=host,
+            port=port,
+            user=dbUsr,
+            passwd=dbPass,
+            db=dbName
+        )
     cur = db.cursor()
 
     query = \
-            """
-            SELECT *
-            FROM states
-            WHERE name
-            LIKE '{}'
-            ORDER BY id;
-            """.format(stateNameSearched)
+        """
+        SELECT *
+        FROM states
+        WHERE name
+        LIKE '{}'
+        ORDER BY id;
+        """.format(stateNameSearched)
 
     cur.execute(query)
 

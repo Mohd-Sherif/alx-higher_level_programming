@@ -12,17 +12,22 @@ if __name__ == '__main__':
     dbPass = sys.argv[2]
     dbName = sys.argv[3]
 
-    db = MySQLdb.connect(host=host, port=port,
-            user=dbUsr, passwd=dbPass, db=dbName)
+    db = MySQLdb.connect(
+            host=host,
+            port=port,
+            user=dbUsr,
+            passwd=dbPass,
+            db=dbName
+        )
     cur = db.cursor()
 
     query = \
-            """
-            SELECT c.id, c.name, s.name
-            FROM cities as c
-            INNER JOIN states as s ON s.id = c.state_id
-            ORDER BY c.id;
-            """
+        """
+        SELECT c.id, c.name, s.name
+        FROM cities as c
+        INNER JOIN states as s ON s.id = c.state_id
+        ORDER BY c.id;
+        """
     cur.execute(query)
 
     res = cur.fetchall()

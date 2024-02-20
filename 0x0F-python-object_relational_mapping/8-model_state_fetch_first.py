@@ -28,8 +28,10 @@ if __name__ == '__main__':
     state = session.query(State).order_by(State.id).first()
 
     # Display results
-    print('{}: {}'.format(state.id, state.name)
-            if state.id is not None else 'Nothing')
+    print(
+            '{}: {}'.format(state.id, state.name)
+            if state.id is not None else 'Nothing'
+        )
 
     # Close the session
     session.close()

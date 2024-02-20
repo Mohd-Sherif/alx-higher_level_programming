@@ -12,8 +12,13 @@ if __name__ == '__main__':
     dbPass = sys.argv[2]
     dbName = sys.argv[3]
 
-    db = MySQLdb.connect(host=host, port=port,
-            user=dbUsr, passwd=dbPass, db=dbName)
+    db = MySQLdb.connect(
+            host=host,
+            port=port,
+            user=dbUsr,
+            passwd=dbPass,
+            db=dbName
+        )
     cur = db.cursor()
 
     cur.execute('SELECT * FROM states ORDER BY id;')
