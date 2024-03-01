@@ -15,4 +15,4 @@ if __name__ == '__main__':
 
     response = requests.get(url, auth=(username, password))
 
-    print(response.json()['id'])
+    print(response.json().get('id'))
