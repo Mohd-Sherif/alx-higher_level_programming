@@ -8,9 +8,12 @@ request(url, (err, res, body) => {
   if (err) throw err;
   const data = JSON.parse(body);
   let ctr = 0;
-  for (const movie of data.results) {
-    if (movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-      ctr++;
+  for (let i = 0; i < data.results.length; i++) {
+    const characters = data.results[i].characters;
+    for (let j = 0; j < characters.length; j++) {
+      if (characters[j].endsWith('18/')) {
+        ctr++;
+      }
     }
   }
   console.log(ctr);
