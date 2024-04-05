@@ -4,7 +4,7 @@ const request = require('request');
 
 const url = `https://swapi-api.alx-tools.com/api/films/${process.argv[2]}`;
 
-function fetchData(character) {
+function fetchData (character) {
   return new Promise((resolve, reject) => {
     request(character, (err, res, body) => {
       if (err) {
@@ -16,7 +16,7 @@ function fetchData(character) {
   });
 }
 
-async function main() {
+async function main () {
   try {
     const response = await new Promise((resolve, reject) => {
       request(url, (err, res, body) => {
