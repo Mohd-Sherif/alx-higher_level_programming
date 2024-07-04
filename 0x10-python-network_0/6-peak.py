@@ -3,5 +3,18 @@
 
 
 def find_peak(list_of_integers):
-    sorted_list = sorted(list_of_integers, reverse=True)
-    return sorted_list[0] if len(sorted_list) > 0 else None
+    if list_of_integers == []:
+        return None
+    l = len(list_of_integers)
+    mid = int(l / 2)
+    if l == 1:
+        return list_of_integers[0]
+    if l == 2:
+        return max(list_of_integers[0], list_of_integers[1])
+    if list_of_integers[mid - 1] <= list_of_integers[mid] and\
+          list_of_integers[mid + 1] <= list_of_integers[mid]:
+        return list_of_integers[mid]
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
+        return find_peak(list_of_integers[mid:])
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+        return find_peak(list_of_integers[:mid])
